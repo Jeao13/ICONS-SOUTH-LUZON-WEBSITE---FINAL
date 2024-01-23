@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICONS SL | Connect With Us</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="app.js"></script>
+    <script defer src="nav.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+
+        html, body {
+            height: 100%
+        }
+
+        .banner {
+            min-height: 40vh;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px
+        }
+
+
+
+        .line {
+            border: 3px solid #022E7D;
+            width: 6%;
+            margin: auto;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+
+
+        .line2  {
+            border: 3px solid #ffc239;
+            width: 6%;
+            margin: auto;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+
+
+        .bg-ecosystem {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/media8.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+        }
+
+        .footer{
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            background-color: #022e75;
+        }
+
+        .footer h4{
+            margin-top: 10px;
+            font-weight: 600px;
+            font-size: 25px;
+            color: #ffffff;
+        }
+
+        .footertext{
+            color: #ffffff;
+            font-size: 9px;
+        }
+
+        .icons .fa{
+            color: #ffffff;
+            margin: 0 13px;
+            cursor: pointer;
+            padding: 18px 0;
+        }
+
+        
+        .bg-map {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/steerhub1.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+
+        }
+
+        #nav h1::after, #nav a::after{
+            content: '';
+            width: 0%;
+            height: 4px;
+            background: #ffc239;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        #nav h1:hover::after, #nav a:hover::after{
+            width: 100%;
+        }
+
+        .send_button {
+            border: solid 1px black;
+            border-radius: 3px;
+            padding: 4px !important;
+            margin-top: 1rem;
+        }
+
+
+        .login {
+            text-decoration: none;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+            margin-top: 2rem !important;
+        }
+
+        #mybtn {
+                position:fixed;
+                right: 10px;
+                bottom: 10px;
+                width: 50px;
+                height: 50px;
+                background-color: #022E75;
+                color: white;
+                cursor: pointer;
+                border-radius: 50px;
+                border: none;
+                outline: none;
+        }
+
+        #mybtn:hover {
+                background-color: #022E75;
+        }
+
+        .textcolor {
+                color: #ffa300 !important;
+        }
+
+        #background-video {
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: -1;
+        }
+
+        .w-20 {
+            width: 6rem !important;
+        }
+
+        .ml {
+            margin-left: 6rem;
+        }
+
+        .op-btn{
+            display: inline-block;
+            text-decoration: none;
+            color: #ffa300;
+            border: 2px solid #ffc239;
+            border-radius: 6px;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+            padding-bottom: 12px;
+        }
+
+        .op-btn:hover{
+            border: 1px solid #ffc239;
+            background: #ffc239;
+            transition: 0.5s;
+            color: #ffffff;
+        }
+
+        .viewallpartners {
+            padding-bottom: 24px;
+        }
+
+        .logo-height {
+            height: 3.75rem;
+        }
+
+        .btn-danger {
+                color: #022E75;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-objective">
+
+    <!-- Background Video -->
+
+    <video id ="background-video"autoplay loop muted>
+        <source src="images/bg.mp4" type="video/mp4"/>
+    </video>
+
+    <!-- Header  -->
+
+    <div class="flex relative flex-col banner h-1/2 bg-banner1 bg-cover bg-center text-white">
+        <div class="flex justify-between md:pl-6 md:pt-4 md:pr-6 lg:pr-20 lg:pt-8 lg:pl-20">
+            <div class="ml-10"> 
+                <img class="logo-height" src="images/logo.png" alt="">
+            </div>
+            <div class="h-20 mr-8 mt-8" id="bars">
+                <div class="flex relative md:hidden">
+                    <i class="fa fa-bars text-yellow-500" onclick="toggleMobileMenu()"></i>
+                </div>
+                <div id="nav" class="hidden md:flex md:space-x-3 lg:space-x-7">
+                    <a href="./index.html" class="text-white md:text-base lg:text-lg font-bold">
+                        HOME
+                    </a>
+                    <a class="text-white md:text-base lg:text-lg font-bold">
+                        <button onclick="window.location.href='about.html'">
+                            ABOUT
+                        </button>
+                        <svg onclick="toggleDropdown()" id="dropdownNavbarLink" class="relative inline-flex w-5 h-5 text-white" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd">
+                            </path>
+                        </svg>
+
+                        <div id="aboutDropdown" class="hidden absolute top-8 left-0 z-10 w-60 bg-black rounded-lg">
+                            <div class="flex flex-col space-y-3 pb-2 px-9">
+                                <a href="./about.html#whoweare" class="text-right font-bold text-base text-zinc-500  hover:text-white">
+                                    WHO WE ARE
+                                </a>
+
+                                <a href="./about.html#programsview" class="text-right font-bold text-base text-zinc-500  hover:text-white">
+                                    PROGRAMS
+                                 </a>
+ 
+                                 <a href="./about.html#ofpartners" class="text-right font-bold text-base text-zinc-500  hover:text-white">
+                                     OFFICIAL PARTNERS
+                                  </a>
+                                  
+                            </div>
+                        </div>
+
+                    </a>
+                    <a href="./activities.html" class="text-white md:text-base lg:text-lg font-bold">
+                        BLOGS AND ACTIVITIES
+                    </a>
+                    <a href="./connect.html" class="text-white md:text-base lg:text-lg font-bold">
+                        CONNECT
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="flex md:hidden">
+
+        </div>
+        <div class="flex flex-col grow h-full text-center items-center">
+            <div class="text-5xl md:text-6xl font-bold my-40 pb-14 md:my-0 md:pb-0 md:pt-5" style="text-shadow: 5px 5px #424241  !important;" id="ofpartners">
+                PARTNERS
+            </div>
+        </div>
+
+        <div class="hidden absolute right-0 h-screen bg-neutral-600 w-60" id="mobileMenu">
+            <div class="flex flex-col p-3 text-xl">
+                <i class="text-yellow-400 text-lg fa fa-times" onclick="toggleMobileMenu()"></i>
+                <div class="mt-10"></div>
+                <div class="flex flex-col space-y-5">
+                    <a class="text-lg font-bold text-white px-5">
+                        HOME
+                    </a>
+                    <div class="text-lg font-bold text-white px-5">
+                        <button onclick="window.location.href='about.html'">
+                            ABOUT
+                        </button>
+
+                        <svg onclick="toggleDropdown2()" id="dropdownNavbarLink2" class="relative inline-flex w-5 h-5 text-white" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd">
+                            </path>
+                        </svg>
+
+                        <div id="aboutDropdown2" class="absolute top-50 left-0 z-10 w-60 bg-black rounded-lg">
+                            <div class="flex flex-col space-y-3 py-4 pb-2 px-9">
+                                <a href="./about.html#whoweare" class="text-right font-bold text-base text-zinc-500  hover:text-white">
+                                    WHO WE ARE
+                                </a>
+
+                                <a href="./about.html#programsview" class="text-right font-bold text-base text-zinc-500  hover:text-white">
+                                    PROGRAMS
+                                 </a>
+ 
+                                 <a href="./about.html#ofpartners" class="text-right font-bold text-base text-zinc-500  hover:text-white">
+                                     OFFICIAL PARTNERS
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <a class="text-lg font-bold text-white px-5">
+                        BLOGS AND ACTIVITIES
+                    </a>
+                    <a class="text-lg font-bold text-white px-5">
+                        CONNECT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="./about.html#programsview" class="btn btn-danger" 
+    style="display: flex;  align-items: center; text-decoration: none; border-radius: 20px !important; margin-left: 10px; padding-top: auto; padding-left: 10px; padding-right: 10px;">
+    <i class="fa fa-arrow-left" style="width: 100%;" aria-hidden="true"></i>
+    </a>
+
+    <div class="flex justify-center my-10 ml-6 md:ml-20 space-x-2 md:space-x-9 text-xs md:text-base">
+        <div>
+            <button
+                id="all_button"
+                onmousedown="filter('all')" 
+                class="underline underline-offset-8 decoration-red-500">
+                ALL
+            </button>
+        </div>
+        <div>
+            <button 
+            id="pcieer_button"
+            onmousedown="filter('pcieer')">PCIEERD TBIs</button>
+        </div>
+        <div>
+            <button
+             id="pcaarrd_button"
+             onclick="filter('pcaarrd')">PCAARRD TBIs</button>
+        </div>
+        <div>
+            <button 
+            id="priv_button"
+            onclick="filter('priv')">Private TBIs</button>
+        </div>
+        <div>
+            <button 
+            id="acad_button"
+            onclick="filter('acad')">Academe</button> 
+        </div>
+        <div>
+            <button 
+            id="fab_button"
+            onclick="filter('fab')">Fablabs</button> 
+        </div>
+        <div>
+            <button 
+            id="private_button"
+            onclick="filter('private')">Private Organizations</button> 
+            
+        </div>
+
+    </div>
+    <div class="my-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center content-center">
+        <div class="pcieer">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="http://cti.batstate-u.edu.ph"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQkWOjKi6j2leM-ZeVgZyx54jnKGz71WU9j3bqFrooOB8gZ-B58x4LR2SywNYs6U3wpnIjH9KIUdjPkTUzrPBiJBYAkAA=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    BatStateU CTI
+                </h1>
+            </div>
+        </div>
+        <div class="pcieer">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://agora.uplb.edu.ph/uplb-sibol-fablab/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOTC1b6Bb8qX7sY2siF-Jt0lyKuNS1bPwxACNGhwuUeEcTOnC8Nl87tKS4lShozImhSw5F_PiWUnhM0O7bhLL6JVMoF8QA=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    UPLB Sibol
+                </h1>
+            </div>
+        </div>
+        <div class="pcieer">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://www.dlsuanimolabs.com/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQo6qE3SwXumxqHWlEtGQ9X_fN6RxeYXSAVW5__5I2VzyLgEBpdL14XJDXSy29Asx8AUZ8fPkBdNONk3wEW57cesS3jww=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    DLSU Animo Labs
+                </h1>
+            </div>
+        </div>
+        <div class="pcaarrd">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://fprdi.dost.gov.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81paVVB8zCYntFvhTr147qObTbXJjKe-MdUD7h5QN2PxgBmi9MGeo6GNpv8mrkS6XgK2ssdbrcibyRfc3lOIzlImnr8tQg=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    DOST FPRDI
+                </h1>
+            </div>
+        </div>
+        <div class="pcaarrd">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://www.facebook.com/lspuagriaqua"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81pwB35bhI2K8DNUM0VtN5IXsWx4lu_IKq3Z5wpGYFcS5_jwfxoSZ5gIY3aqwFDgHS8UZxwniH_yJrDGl5Tv-74MiZ4ePg=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    LSPU ATBI
+                </h1>
+            </div>
+        </div>
+        <div class="pcaarrd">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://www.facebook.com/CvSU.ATBI/"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81rVXSTvGM_qEnYHxh_hIvwoylSbXsDUn8P4X5SQ-YUIF_lODjyhPd3gU72Wf4Nrqpti2dVAioxKjaGZUGO8z-B1qQMCCg=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    CvSU ATBI
+                </h1>
+            </div>
+        </div>
+        <div class="priv">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://nexus.dlsl.edu.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOSLRf8lhLCMpR8Iomf1_DMW7NavZnGe1DuOYbRU9DAQb_ldHH0Mu6bGGDRNy1bUQxB1KQc0oTVXP1q6F4AkCbW70odTTg=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    DLSL Nexus Innovation Lab
+                </h1>
+            </div>
+        </div>
+        <div class="priv">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://www.brainsparks.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOSf0aEYNxBz3xV0e72uF4ySBEZxNn5BfkG9mMkeCX9v483ku8HhDpw4m3meD6Ca7lo_Xk1xFhWG4JVot8nevjnMla5_qw=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    Brainsparks
+                </h1>
+            </div>
+        </div>
+        <div class="priv">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="http://cbi.ub.edu.ph"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81ov0CTI-M_2PpOqBcnsZsNZjrnOXttsqT7ZdZejZvLCLIk7F8xmawNQSFJRGC3jmYKRoZz6qfiufYZ7xoih5t-wKqgS=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    University of Batangas CBI
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://batstate-u.edu.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOTkQn29bFhUW6xuF-_NJDLgECVf1TN0vPPEqcBKjYNr7JjuDSLpgJso2HSzvtLtMmOYzhq4RTKIvuWXmdF1IpznEHfYog=s1600" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    BatStateU
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://uplb.edu.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ5CxCq-39AoK3wE2sPuxcDyRY_ADkQizOcrEGV9yltAFNW5TGHpV-SGFTtKk2ffl7APgZkuCrTDrkQ7fz8p9W_bSGQ2Q=s1600" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    UPLB
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://www.dlsu.edu.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOS7UgiopBtujNl5q9lFbNcmPZf-f2t2YUccL3giAkERC84qQudp2fJ23fz1xjzjNzZsro5A2auf3yr2zE8bkK46CGfh2w=s1600" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    DLSU
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://www.dlsl.edu.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORV_yD7S96zDE-iUg_eqt-6A4eE0gKmHGsdjIFcHIMmk0vUvK7NRx7V_hf-klRZBv97HH80ufi9go6O9wy6szJhiGUt=s1600" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    DLSL
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://lspu.edu.ph/page/university-seal"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81pYl2AlNQNWn3-DXcvsoADgVcJ2k_SPAtdJiYgtkrpffWtZT4K5P1-glE4aRA8gifFn1Zl6R8zfjDLTWYfwyM5XFj305g=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    LSPU
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://cvsu.edu.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOS4GYBxwMHBs_CXGhomMv6CdyBtB0sz_iVTxGGWsLlqUWfKsrxJk0erMuRwdWWccEtnZVWDXUkzJTik2SzC_Skf2MYRPg=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    CvSU
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="http://www.ub.edu.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOTOvdkFMlrGlmdiJylHT--_rfumRNW0kiwb9cq8djOQ4Mml4ro4Hf4vhqBhHSrHsIVsHemLcZ7mnBIDv55YySpEBlxW=s1600" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    UB
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://www.facebook.com/slsuMain/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQlxRlU8fQIOmv6fWnna_do8lWZPi026mTqrwHlwuCBEdI3TxTm-w4TGNmige_N1XSVQV-lAm8inthYhm8_nBMEN53HDQ=s1600" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    SLSU
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="http://www.urs.edu.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORW54GDIXPo99cLPsGrNTUnBa84qawhtFfdQAeq71GU11oo1HDR5OZgrEov1sQOpEn_SubFTwqwxnWVtoq9idgAu2jpyA=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    University of Rizal System
+                </h1>
+            </div>
+        </div>
+        <div class="acad">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://mseuf.edu.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOSFCXYm4iywJyRdfMuReXCw5d5BtRP90C6iYAB6P_yrK1F5GKOG8eH6E0h8Oo0zOUYq1_6IXtDI9ukA3Yftw9Gz_wKsrQ=s1600" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    MSEUF
+                </h1>
+            </div>
+        </div>
+        <div class="fab">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://pcieerd.dost.gov.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81pcZFMwgFfcLEsrQ9SPWcNXoEZuI0voXVsLM4v8gF0EgJkMS7t956XqZaUxJZnvvUt4dSvOtXM8Notyl73Ndq_d0WS9kA=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    Likha Fablab
+                </h1>
+            </div>
+        </div>
+        <div class="fab">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://pcieerd.dost.gov.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOR75qpp3OWDpHVS136RAmpZf6HgoffRI-8Yfr-8FeuVoIrT0DePFMxBo-eGKsbCt0HAJXa6t3HOGHGweZozZCumCP3h=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    DLSU Animo Labs
+                </h1>
+            </div>
+        </div>
+        <div class="fab">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://pcieerd.dost.gov.ph/"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81pbjR0PN3xnZPRvjwueO_zkMtZnq3UzPEkAC-TF9qBOFWQSQT08Y0dRsGB4NueTXHdjluXSGcl45J04_tVVREB98lARwg=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    UPLB Fablab
+                </h1>
+            </div>
+        </div>
+        <div class="private">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://asklexph.com/"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81ph1QWBni47zPcZ7mRtGN-zRWQG-UW5rlEh2dZx7qNkgtdZFT5whWjsNFFWtr1BnvsVJ-cDzdzDKiBoJzSaoM1YvfVjsQ=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    AskLexPH
+                </h1>
+            </div>
+        </div>
+        <div class="private">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://aestudy.com/"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81ovN2K7pbXsAwVpdWrgPNTqgs2q3OuDDHRWh_A1feczLezi1bySekY-qNViAQmtdPV8miTT9mmq_QpiXlADLbS3Itbvcw=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    Academy of Entrepreneurs
+                </h1>
+            </div>
+        </div>
+        <div class="private">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://www.livewire.shell/"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81p6YHIXpsS1o0aH1iLTc9-Mdt4UTp8UDCHBF1LPZ5xaZuFOTjvRpjTElW5-lvvCp7rpK_ghw2rmPPUwcV7RGPhVZGqI=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    Shell LiveWire
+                </h1>
+            </div>
+        </div>
+
+        <div class="private">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://akadasia.com"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81rcEkXAgEYcTW19FVVKj4gJm97PbCCEHyfBn_36FNF7GJl-gDgari6v2xCkE_4LS8X3P-tTPF7kWdmqCNTL_gHDrO-T=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    Akadasia
+                </h1>
+            </div>
+        </div>
+        <div class="private">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://phildev.org"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81qXyCtqiPTKGRlo4xUPRv7sfpwCZRhpJ7CufhNF6-d163lGQBmg8avo0ZEqJa_SbQpVdskPsITUzCstNY_gVcHOfCkhHw=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    Phildev
+                </h1>
+            </div>
+        </div>
+        <div class="private">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <a href="https://embiggengroup.com"><img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81rpVrf1yqHBs9w4iGnDPeQyBGfnBNX4seYXmD737MYci3Wzztzrk58IN-Qnalehbcmy_MEnb7QscYNUDX_qgtIs5YTOZg=s2560" class="h-20 w-20"></a>
+                </div>
+                <h1 class="text-gray-500">
+                    Embiggen
+                </h1>
+            </div>
+        </div>
+      </div>
+
+      <div style="height: 100%">
+    </div>
+
+      
+
+    
+    
+    <!--- Footer -->
+
+    <section class="footer">
+        <h4><strong>CONNECT WITH US</strong></h4>
+
+        <div class="icons">
+            <a href="https://www.facebook.com/iconsSL"><i class="fa fa-facebook"></i></a>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+
+        <p class="footertext">© ICONS South Luzon 2023 | Made with love by Jax and Joyce ♥</p><br>
+
+
+            <!--- Upward Button; Back to Top -->
+
+        <button onclick="topFunction()" id="mybtn">
+            <i class="material-icons">arrow_upward</i>
+        </button> 
+        <script>
+            let mybutton = document.getElementById("mybtn");
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction(){
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display="block";
+                } else {
+                    mybutton.style.display="none";
+                }
+            }
+            function topFunction(){
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop=0;
+            }
+        </script>
+            <!--- End of Upward Button-->
+
+    </section>
+    <!--- End of Footer -->
+
+
+    <script src="icons.js" async defer></script>
+    <script src="partners.js" async defer></script>
+</body>
+</html>

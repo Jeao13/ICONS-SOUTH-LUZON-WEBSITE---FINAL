@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ICONS South Luzon</title>
+        <link rel="icon" href="images/logo.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script defer src="app.js"></script>
+
+        <style>
+            #mybtn {
+                position:fixed;
+                right: 10px;
+                bottom: 10px;
+                width: 50px;
+                height: 50px;
+                background-color: #022E75;
+                color: white;
+                cursor: pointer;
+                border-radius: 50px;
+                border: none;
+                outline: none;
+            }
+
+            #mybtn:hover {
+                background-color: #022E75;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            .btn-danger {
+                background-color: #022E75;
+                color: white;
+                width: 80px;
+                height: 40px;
+            }
+
+            .text-center {
+               text-align: justify;
+            }
+
+            #background-video {
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: -1;
+            }
+
+
+            pre {
+                white-space: pre-wrap;       /* Since CSS 2.1 */
+                white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+                white-space: -pre-wrap;      /* Opera 4-6 */
+                white-space: -o-pre-wrap;    /* Opera 7 */
+                word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            }
+
+        </style>
+    </head>
+
+    <body onload="loadPageDetails()">
+            <div>
+        <section class="actheader">
+            <nav>
+                <a href="index.html"><img src="images/logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="./about.html">ABOUT</a></li>
+                            
+                        <li><a href="activities.html">BLOGS AND ACTIVITIES</a></li>
+                        <li><a href="./connect.html">CONNECT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <section class="news">
+            <div class="news-div">
+                
+                <div class="row">
+                    <div class="news-col">
+                        <img src="" id="page_image">
+                    </div>
+                    <div class="news-col">
+                        <section class="hidden1">
+                        <h1 class="news-heading" id="page_title"></h1>
+                        <div class="line2"></div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+        </div>
+
+        <video id ="background-video"autoplay loop muted>
+            <source src="images/bg.mp4" type="video/mp4"/>
+        </video>
+        
+        <div style="margin-top: 15px; text-align: center;">
+            <a href="./programs.html" class="btn btn-danger" 
+            style="display: flex;  align-items: center; text-decoration: none; border-radius: 3px !important; margin-left: 10px; padding-top: auto; padding-left: 10px; padding-right: 10px;">
+            <i class="fa fa-arrow-left" style="width: 100%;" aria-hidden="true"></i>
+        </a>
+        </div>
+
+
+        
+            <section class="news-desc" style="overflow: hidden;">
+
+            <div class="news-paragraph" ><br>
+                <!-- This is where the page content of the program content is inserted -->
+                <pre class="news-proper text-center" id="page_text"></pre>
+            </div>
+        </section>
+
+        <!-- Official Partners  -->
+
+        <section class="hidden">
+            <section class="partners">
+                <h1 class="partner-text">OFFICIAL PARTNERS</h1>
+                <div class="line"></div>
+    
+                <!-- Partners Logo -->
+
+                <div class="logos">
+                    <img src="logos/dost.png" class="logo">
+                    <img src="logos/bsu.png" class="logo">
+                    <img src="logos/cti.png" class="logo">
+                    <img src="logos/triangle.png" class="logo">
+                    <img src="logos/sibol.png" class="logo">
+                    <img src="logos/ulo.png" class="logo">
+                    <img src="logos/nexus.png" class="logo">
+                    <img src="logos/animolabs.png" class="logo">
+                    <img src="logos/pitbi.png" class="logo">
+                </div>
+    
+            </section>
+            </section>
+
+            <!-- Footer  -->
+
+            <section class="footer">
+                <h4>CONNECT WITH US</h4>
+    
+                <div class="icons">
+                    <a href="https://www.facebook.com/iconsSL"><i class="fa fa-facebook"></i></a>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-linkedin"></i>
+                </div>
+                <p class="footertext">© ICONS South Luzon 2023 | Made with love by Jax and Joyce♥</p>
+            
+                <!-- Arrow Upward Button; Back To Top  -->
+
+                <button onclick="topFunction()" id="mybtn">
+                    <i class="material-icons">arrow_upward</i>
+                </button> 
+                <script>
+                    let mybutton = document.getElementById("mybtn");
+                    window.onscroll = function() {scrollFunction()};
+    
+                    function scrollFunction(){
+                        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                            mybutton.style.display="block";
+                        } else {
+                            mybutton.style.display="none";
+                        }
+                    }
+                    function topFunction(){
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop=0;
+                    }
+                </script>
+                <!-- End of Arrow Upward Button  -->
+
+            </section>
+            <!-- End of Footer  -->
+
+            <script src="icons.js" async defer></script>
+    </body>
+</html>

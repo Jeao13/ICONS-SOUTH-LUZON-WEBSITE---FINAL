@@ -1,0 +1,23 @@
+{
+  "name": "icons-south-luzon-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/style.css -o ./css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jxblrkrstffrbrms/ICONS-South-Luzon-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jxblrkrstffrbrms/ICONS-South-Luzon-Website/issues"
+  },
+  "homepage": "https://github.com/jxblrkrstffrbrms/ICONS-South-Luzon-Website#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}

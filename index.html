@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ICONS South Luzon</title>
+        <link rel="icon" href="images/logo.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script defer src="app.js"></script>
+        <script defer src="icons.js"></script>
+
+        <style>
+            .aboutDropdown {
+                display: none;
+                position: absolute;
+                top: 2rem;
+                left: 0;
+                z-index: 9999;
+                background-color: black;
+                color: rgb(113 113 122);
+                border-radius: 0.5rem;
+                width: 15rem;
+                text-align: right;
+                font-weight: 700;
+            }
+
+            .aboutDropdown div {
+                padding-left: 2.25rem;
+                padding-right: 2.25rem;
+                padding-top:0.5rem;
+                padding-bottom: 0.75rem;
+            }
+
+            .aboutDropdown div a {
+                display: block;
+                margin-top: 12px;
+                line-height: 1.5rem;
+                color: rgb(113 113 122) !important;
+            }
+
+            .mt {
+                margin-top: 5rem;
+            }
+
+            .aboutDropdown div a::after{
+                content: '';
+                width: 0%;
+                height: 4px;
+                background: #ffc239;
+                display: block;
+                margin: auto;
+                transition: 0.5s;
+            }
+
+            .aboutDropdown div a:hover{
+                color: white !important;
+            }
+
+
+            .aboutDropdown div a:hover::after{
+                width: 100%;
+            }
+
+            #mybtn {
+                position:fixed;
+                right: 10px;
+                bottom: 10px;
+                width: 50px;
+                height: 50px;
+                background-color: #022E75;
+                color: white;
+                cursor: pointer;
+                border-radius: 50px;
+                border: none;
+                outline: none;
+            }
+
+            #mybtn:hover {
+                background-color: #022E75;
+            }
+
+            html{
+                scroll-behavior: smooth;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+            <div>
+        <section class="header">
+            <nav>
+                <a href="index.html"><img src="images/logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li style="position: relative">
+                            <a href="./about.html">ABOUT</a>
+                            <svg id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" style="display: inline; height: 15px; width: 20px; color: white;" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd">
+                                </path>
+                            </svg>
+
+                            <div id="aboutDropdown" class="aboutDropdown">
+                                <div>
+                                    <a href="./about.html#objectives">
+                                        WHO WE ARE
+                                    </a>
+                                    <a href="./about.html#programsview">
+                                        PROGRAMS
+                                    </a>
+                                    <a href="./about.html#ofpartners">
+                                        OFFICIAL PARTNERS
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </li>
+                        <li><a href="./activities.html">BLOGS AND ACTIVITIES</a></li>
+                        <li><a href="./connect.html">CONNECT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <div class="text-box">
+                <h1 class="maintext" style="text-shadow: 5px 5px #424241 !important;">ICONS South Luzon</h1>
+                <p class="description"><strong>Innovation Consortium</strong> or <strong>ICONS South Luzon</strong> is a dynamic network of incubators and enablers<br>
+                     that supports startup development and spurs innovation in South Luzon. We empower startups and drive regional<br>
+                      economic growth through innovative and sustainable solutions.</p>
+                <a href="" class="hero-btn">Learn More</a>
+            </div>
+        </section>
+        </div>
+
+        <!-- Background Video  -->
+
+        <div class="lower">
+            <video id="background-video" autoplay loop muted>
+                <source src="images/bg.mp4" type="video/mp4">
+            </video>
+
+        <section class="hidden">
+        <section class="about">
+            <div class="aboutsec">
+            <h1 class="text">ABOUT US</h1>
+            <div class="line"></div>
+            <p class="desc"></p>
+            <div class="row">
+                <div class="about-col">
+                    <img src="icons/partner.png" class="icon">
+                    <p>Foster collaboration and cooperation among all stakeholders</p>
+                </div>
+                <div class="about-col">
+                    <img src="icons/enterprise.png" class="icon">
+                    <p>Supports and empower startups to drive economic growth and innovation in the South Luzon region</p>
+                </div>
+                <div class="about-col">
+                    <img src="icons/innovation.png" class="icon">
+                    <p>Empower startups and spur innovation in the region by providing range of resources including 
+                    mentorship, training programs, access to funding, and networking opportunities</p>
+                </div>
+            </div></div>
+        </section>
+        </section>
+
+        
+        <section class="consortium">
+            <div class="consortium-div">
+                
+                <div class="row">
+                    <div class="cons-col">
+                        <section class="hidden1">
+                        <h1 class="consortium-text">CONSORTIUM</h1>
+                        <div class="line2"></div>
+                        <p class="cons-text">ICONS South Luzon is a diverse and collaborative network of incubators, enablers, and government institutions
+                            that drives regional economic growth through sustainable startup development and innovation.</p>
+
+                        <a href="./about.html" class="cons-btn">Learn More</a></section>
+                    </div>
+                
+                    <div class="cons-col">
+                        <img src="images/finalconsortium.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="hidden">
+        <section class="activities">
+            <h1 class="act-text">ACTIVITIES</h1>
+            <div class="line"></div>
+            <div class="acts">
+                <div class="act">
+                    <a href="programs.html"><img src="images/ICONnect.jpg" onclick="goToProgramContentPage('643f5c01e269433dd64b186e')"></a>
+                    <h4 class="act-title">ICONnect</h4>
+                    <div class="line2"></div>
+                    <p class="act-desc">ICONnect aims to gather the community or the general public to create awareness, cultivate their interests and encourage people to take part in elevating the startup ecosystem in South Luzon.</p>
+                </div>
+                <div class="act">
+                    <a href="activities.html"><img src="images/act2.jpg"></a>
+                    <h4 class="act-title2">Founders' Perspectives</h4>
+                    <div class="line2"></div>
+                    <p class="act-desc">Founders' Perspective highlights the failures of startup founders and their road to success which can inspire young entrepreneurs and other startup founders present at the event.</p>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <section class="hidden">
+        <section class="partners">
+            <h1 class="partner-text">OFFICIAL PARTNERS</h1>
+            <div class="line"></div>
+
+            <div class="logos">
+                <a href="https://pcieerd.dost.gov.ph/"><img src="logos/dost_fprd.png" class="logo"></a>
+                <a href="https://batstate-u.edu.ph/"><img src="logos/bsu.png" class="logo"></a>
+                <a href="http://cti.batstate-u.edu.ph/"><img src="logos/cti.png" class="logo">
+                <a href="https://agora.uplb.edu.ph/uplb-sibol-fablab/"><img src="logos/sibol.png" class="logo">
+                <a href="https://www.brainsparks.ph/"><img src="logos/ulo.png" class="logo">
+                <a href="https://nexus.dlsl.edu.ph/"><img src="logos/nexus.png" class="logo">
+                <a href="https://www.dlsuanimolabs.com/"><img src="logos/animolabs.png" class="logo">
+            </div>
+            
+            <div class="viewallpartners">
+            <a href="./partners.html" class="op-btn">View All Partners</a>
+        </div>
+
+
+
+        </section>
+        </section>
+    </div>
+
+        <section class="footer">
+            <h4>CONNECT WITH US</h4>
+
+            <div class="icons">
+                <a href="https://www.facebook.com/iconsSL"><i class="fa fa-facebook"></i></a>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p class="footertext">© ICONS South Luzon 2023 | Made with love by Jax and Joyce ♥</p><br>
+            <a href="login.html" class="login">ADMIN LOGIN</a>
+
+            <button onclick="topFunction()" id="mybtn">
+                <i class="material-icons">arrow_upward</i>
+            </button> 
+            <script>
+                let mybutton = document.getElementById("mybtn");
+                window.onscroll = function() {scrollFunction()};
+
+                function scrollFunction(){
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        mybutton.style.display="block";
+                    } else {
+                        mybutton.style.display="none";
+                    }
+                }
+                function topFunction(){
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop=0;
+                }
+            </script>
+        </section>
+    <script>
+        let displayAbout = true;
+
+        aboutDropdown = document.getElementById("aboutDropdown")
+        dropdownNavbarLink = document.getElementById("dropdownNavbarLink")
+
+        function toggleAbout() {
+            displayAbout = !displayAbout;
+            if (displayAbout) {
+                aboutDropdown.style.display = "none";
+            } else {
+                aboutDropdown.style.display = "block";
+            }
+        }
+
+        window.addEventListener("click", function(event) {
+            if (event.target != dropdownNavbarLink) {
+                aboutDropdown.style.display = "none";
+            } else {
+                toggleAbout();
+            }
+        });
+
+
+    </script>
+    </body>
+</html>
