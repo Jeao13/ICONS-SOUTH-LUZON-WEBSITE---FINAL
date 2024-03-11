@@ -269,15 +269,15 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label"><b>Direct Image Link</b><i> (Please add a link)</i></label>
-                        <textarea type="email" class="form-control" id="add_picture" aria-describedby="emailHelp" style="height: 500px"> </textarea>
+                        <label for="exampleInputEmail1" class="form-label"><b>Attach Image</b></label>
+                        <input type="file" id="image_url" accept=".png, .jpg, .jpeg">
                         <div id="emailHelp" class="form-text">This will be used in the <i> Gallery Section </i> in <b>Blogs and Activities Page</b>.</div>
                       </div>
                 </div>
           
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="save_button" data-bs-dismiss="modal" onclick="addPicture()">Save</button>
+                  <button type="button" class="save_button" data-bs-dismiss="modal" onclick="addPicture()">Save</button>
                   <button type="button" class="delete_button" data-bs-dismiss="modal">Close</button>
                 </div>
           

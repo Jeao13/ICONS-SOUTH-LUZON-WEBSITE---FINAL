@@ -1,5 +1,93 @@
-// 18.138.58.216 is the current ip address of the api
-// change this when the api is deployed for final release
+
+document.getElementById("createAcc").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const email = document.getElementById("email").value;
+    const role = document.getElementById("role").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("password1").value;
+
+    if (!email || !password || !username || !confirmPassword) {
+        alert("Please fill all input fields");
+        return;
+    }
+    
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+    }
+
+    // Send a POST request to the server to register the user
+    try {
+        const response = await fetch('http://localhost:8080/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username,role, email, password }) // Send email and password to the server
+        });
+
+        if (!response.ok) {
+            const errorMessage = await response.text(); // Get the error message from the server
+            throw new Error(errorMessage || 'Failed to register user');
+        }
+
+        // Show confirmation message to the user
+        alert('User registration successful! Please login to continue.');
+        const id = await response.text();
+        sessionStorage.setItem('new_id', id);
+        window.location.href = './profile.html';
+    } catch (error) {
+        console.error('Error registering user:', error);
+        alert('Failed to register user. Please try again.');
+    }
+});
+
+async function profile() {
+    const new_id = sessionStorage.getItem('new_id');
+    const name = document.getElementById('name').value;
+    const picInput = document.getElementById('pic');
+    const locations = document.getElementById('locations').value;
+
+    // Create FormData object
+    const formData = new FormData();
+    formData.append('new_id', new_id); // Include new_id in the request body
+    formData.append('name', name);
+    formData.append('locations', locations);
+    formData.append('pic', picInput.files[0]); // Append file to FormData
+
+    try {
+        const response = await fetch('http://localhost:8080/profile', {
+            method: 'POST',
+            body: formData // Use FormData instead of JSON.stringify
+        });
+
+        if (!response.ok) {
+            const errorMessage = await response.text();
+            throw new Error(errorMessage || 'Failed to upload profile');
+        }
+
+        alert('Profile uploaded successfully!');
+        window.location.href = './home.html';
+    } catch (error) {
+        console.error('Error uploading profile:', error);
+        alert('Failed to upload profile. Please try again.');
+    }
+}
+
+
+
+function generateRandomHex(length) {
+    const characters = '0123456789abcdef';
+    let result = '65'; // Start with '65'
+    for (let i = 2; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
+
+
+
 
 
 async function login() {
@@ -18,23 +106,73 @@ async function login() {
     }
 
     // we will change the url of this once we get to deploy our API
-    await fetch('http://18.138.58.216:8080/icons/admins', {
+    await fetch('http://localhost:8080/login1', {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+          
         },
         body: JSON.stringify({"username": username, "password": password})
     })
        .then(response => response.json())
-       .then(response => {
+       .then(response  => {
             // This is the expected response from the endpoint
             // This is how we know the user credentials is valid and active
             if (response.message == 'OK') {
-                alert('Successfully logged in as Admin');
+                
+               
+                const name = response.fname + " " + response.lname;
+                console.log(name);
+                sessionStorage.setItem("admin_name", name);
+                window.location.href = './home.html';
+            } else {
+                alert("Invalid Username or Password");
+                return
+            }
+
+            /*
+            if (response.message == 'OK') {
                 sessionStorage.setItem("token", response.token);
-                sessionStorage.setItem("admin_name", response.name);
+            }
+            */
+       })
+}
+
+
+async function login1() {
+
+    //This is the function for submitting the credentials in the login page
+    // 
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+
+
+    // If both username and password fields are empty
+    // the window will alert that the user needs to fill in both fields
+    if (!username || !password) {
+        alert("Please fill missing input");
+        return
+    }
+
+    // we will change the url of this once we get to deploy our API
+    await fetch('http://localhost:8080/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+       
+        },
+        body: JSON.stringify({username,password})
+    })
+       .then(response => response.json())
+       .then(response  => {
+            // This is the expected response from the endpoint
+            // This is how we know the user credentials is valid and active
+            if (response.message == 'OK') {
+                
+            const name = response.fname + " " + response.lname;
+            console.log(name);
+            sessionStorage.setItem("user_name", name);
+
                 location.replace("./home.html");
             } else {
                 alert("Invalid Username or Password");
@@ -48,6 +186,178 @@ async function login() {
             */
        })
 }
+
+
+
+async function getRooms(id) {
+    try {
+        const response = await fetch(`http://127.0.0.1:8080/icons/convo/find/${id}`, {
+            method: 'GET'
+        }); 
+
+       
+        
+        
+        if (!response.ok) {
+            throw new Error('Failed to fetch conversation data');
+        }
+
+        const data = await response.json();
+
+        console.log(data);
+
+        
+        
+        for (const convos of data) {
+            if (convos.user1 === id || convos.user2 === id) {
+                console.log("lol");
+                const mainid = convos.user1 === id ? convos.user2 : convos.user1; // Determine which user ID to use
+                const data1 = await getUsername(mainid);
+            
+                const encodedString = convos.convo; 
+                const decodedString = atob(encodedString);
+
+               
+                // Split the decoded string into an array of chat messages
+                const chatMessages = decodedString.split('\n');
+                // Get the last chat message
+                const lastChat = chatMessages[chatMessages.length - 1];
+
+                var newDiv = document.createElement('div');
+
+                // Set the innerHTML of the new div to your HTML structure
+                newDiv.innerHTML = `
+                    <div class="img">
+                        <i class="fa fa-circle"></i>
+                        <img src="images/default_profile.png">
+                    </div>
+                    <div class="desc">
+                        <small class="time">05:30 am</small>
+                        <h5>${data1.fullname}</h5>
+                        <small> ${lastChat}</small>
+                        <hr>
+                    </div>
+                `;
+
+           
+
+                // Add event listener to the new div
+                newDiv.addEventListener('click', async function(event) {
+                    document.getElementById('msgs').innerHTML = '';
+                    document.querySelector('.right-section-bottom').innerHTML = '';
+                   
+                
+                    // Your existing code to fetch and display conversation
+                    console.log(convos.roomID);
+                    const username = sessionStorage.getItem('user_name');
+                    fetchConvo(convos.roomID, username);
+                
+                    // Create and append the new form
+                    var newForm = document.createElement('div');
+                    newForm.innerHTML = `
+                        <div class="upload-btn">
+                            <button type="button" class="btn"><i class="fa fa-photo"></i></button>
+                            <input type="file" name="myfile" />
+                        </div>
+                        <input type="text" id="messageInput" name="message" placeholder="Type here...">
+                        <button type="submit" class="btn-send"><i class="fa fa-send"></i></button>
+                    `;
+                    document.querySelector('.right-section-bottom').appendChild(newForm);
+                });
+                // Append the new div to your container 'convo_list'
+                document.getElementsByClassName('chatList')[0].appendChild(newDiv);
+                
+                
+            }
+
+           
+        }
+
+        //document.getElementsByClassName('chatList')[0].innerHTML = convo_list; // Remove this line since we are appending individual divs now
+    } catch (error) {
+        console.error('Error fetching conversation data:', error.message);
+    }
+}
+
+
+async function fetchConvo(id, username){
+    try{
+        const response = await fetch(`http://127.0.0.1:8080/icons/convo/findconvo/${id}`, {
+            method: 'GET'
+        });
+        if (!response.ok) {
+            throw new Error('Failed to fetch user data');
+        }
+
+        const data = await response.json();
+        console.log(data);
+        console.log(username);
+
+        const encodedString = data.convo; 
+        const decodedString = atob(encodedString);
+        console.log(decodedString);
+
+        // Split the decoded string into individual messages
+        const messages = decodedString.split('\n');
+
+        // Loop through each message
+        messages.forEach(message => {
+            // Check if the message starts with the name of the user
+            if (message.startsWith(username)) {
+                // Append the message to the right side
+                document.getElementById('msgs').innerHTML += `
+                    <li class="msg-right">
+                        <div class="msg-left-sub">
+                            <img src="images/default_profile.png">
+                            <div class="msg-desc">${message}</div>
+                            <small>05:25 am</small>
+                        </div>
+                    </li>`;
+            } else {
+                // Append the message to the left side
+                document.getElementById('msgs').innerHTML += `
+                    <li class="msg-left">
+                        <div class="msg-left-sub">
+                            <img src="images/default_profile.png">
+                            <div class="msg-desc">${message}</div>
+                            <small>05:25 am</small>
+                        </div>
+                    </li>`;
+            }
+        });
+
+        return decodedString;
+
+    } catch (error) {
+        console.error('Error fetching user data:', error.message);
+        return null; // Return null in case of error
+    }
+}
+
+
+async function getUsername(id) {
+    try {
+        const response = await fetch(`http://127.0.0.1:8080/icons/users/finduser/${id}`, {
+            method: 'GET'
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch user data');
+        }
+
+        const data = await response.json();
+
+        console.log(data);
+
+        return data; // Return the data variable
+    } catch (error) {
+        console.error('Error fetching user data:', error.message);
+        return null; // Return null in case of error
+    }
+}
+
+
+
 
 
 async function getActivities() {
@@ -82,6 +392,32 @@ async function getActivities() {
         document.getElementById('activities').innerHTML = activity_list
     });
 }
+
+
+
+function appendMessage(message) {
+    const username = sessionStorage.getItem('user_name');
+    const chatContainer = document.getElementById('msgs');
+
+    // Create a new list item element
+    const listItem = document.createElement('li');
+    
+    // Add the class to the list item
+    listItem.classList.add('msg-right');
+
+    // Create the inner HTML for the message
+    listItem.innerHTML = `
+        <div class="msg-left-sub">
+            <img src="images/default_profile.png">
+            <div class="msg-desc">${username}: ${message}</div>
+            <small>05:25 am</small>
+        </div>
+    `;
+
+    // Append the list item to the chat container
+    chatContainer.appendChild(listItem);
+}
+
 
 editActivities = []
 async function editgetActivities() {
@@ -142,31 +478,58 @@ async function createActivity() {
     text = document.getElementById('text').value;
     page_text = document.getElementById('page_text').value;
 
+    const fileInput = document.getElementById('image_url');
+    
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+        // Get the first selected file
+        const file = fileInput.files[0];
+
+        // Read the file as a data URL
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            // e.target.result contains the base64-encoded data URL
+            const base64Image = e.target.result;
+
+            console.log(base64Image);
+
+            fetch('http://18.138.58.216:8080/icons/activities', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                },
+                body: JSON.stringify(
+                    {
+                        "image_url": image_url,
+                        "title": title,
+                        "text": text,
+                        "page_text": page_text
+                    }
+                )
+            })
+               .then(response => response.json())
+               .then(response => {
+                    if (response.message == 'OK') {
+                        alert('Successfully added a new activity')
+                        location.reload();
+                    }
+               })
 
 
-    await fetch('http://18.138.58.216:8080/icons/activities', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
-        },
-        body: JSON.stringify(
-            {
-                "image_url": image_url,
-                "title": title,
-                "text": text,
-                "page_text": page_text
-            }
-        )
-    })
-       .then(response => response.json())
-       .then(response => {
-            if (response.message == 'OK') {
-                alert('Successfully added a new activity')
-                location.reload();
-            }
-       })
+
+        };
+
+        reader.readAsDataURL(file);
+
+
+    }
+
+
+
+ 
 }
 
 
@@ -298,8 +661,18 @@ async function getGallery() {
                 activity_list += `</div> <div class="row">`
             }
         }
-        document.getElementById('activities').innerHTML = activity_list
+        document.getElementById('activities').innerHTM
+        L = activity_list
     });
+}
+
+
+
+// This is the needed functions for home.html
+async function messageStartup() {
+    let id = sessionStorage.getItem('id'); // Declare id using let
+    console.log(id);
+    await getRooms(id); // Await the result of the asynchronous function
 }
 
 // This is the needed functions for home.html
@@ -465,27 +838,52 @@ async function deletePicture(id) {
 
 async function addPicture() {
 
-    const body = {
-        'image_url': document.getElementById('add_picture').value
-    }
+    const fileInput = document.getElementById('image_url');
+    
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+        // Get the first selected file
+        const file = fileInput.files[0];
 
-    // This is the api call to add a picture
-    await fetch('http://18.138.58.216:8080/icons/gallery', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
-        },
-        body: JSON.stringify(body)
-    })
-        .then(response => response.json())
-        .then(response => {
-            if (response.message == 'OK') {
-                alert('Successfully added a new picture')
-                location.reload();
-        }
-    })
+        // Read the file as a data URL
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            // e.target.result contains the base64-encoded data URL
+            const base64Image = e.target.result;
+
+            console.log(base64Image);
+
+            fetch('http://18.138.58.216:8080/icons/gallery', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                },
+                body: JSON.stringify(
+                    {
+                        'image_url': base64Image,
+
+                    }
+                )
+            })
+               .then(response => response.json())
+               .then(response => {
+                    if (response.message == 'OK') {
+                        alert('Successfully added a new activity')
+                        location.reload();
+                    }
+               })
+
+
+
+        };
+
+        reader.readAsDataURL(file);
+
+
+    }
     
 }
 
@@ -1030,64 +1428,191 @@ async function createProgram() {
     title = document.getElementById('title').value;
     text = document.getElementById('text').value;
 
+    const fileInput = document.getElementById('image_url');
+    
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+        // Get the first selected file
+        const file = fileInput.files[0];
 
-    await fetch('http://18.138.58.216:8080/icons/programs', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
-        },
-        body: JSON.stringify(
-            {
-                "image_url": image_url,
-                "title": title,
-                "description": text,
-            }
-        )
-    })
-       .then(response => response.json())
-       .then(response => {
-            if (response.message == 'OK') {
-                alert('Successfully added a new program')
-                location.reload();
-            }
-       })
+        // Read the file as a data URL
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            // e.target.result contains the base64-encoded data URL
+            const base64Image = e.target.result;
+
+            console.log(base64Image);
+
+            fetch('http://18.138.58.216:8080/icons/programs', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                },
+                body: JSON.stringify(
+                    {
+                        "image_url": base64Image,
+                        "title": title,
+                        "description": text,
+                    }
+                )
+            })
+               .then(response => response.json())
+               .then(response => {
+                    if (response.message == 'OK') {
+                        alert('Successfully added a new program')
+                        location.reload();
+                    }
+               })
+
+
+
+        };
+
+        reader.readAsDataURL(file);
+
+
+    }
 }
 
 async function createProgramContent()  {
 
     // We get the inputs from the html fields in add.html
     // these are the four fields that we are collecting to create a program content
-    image_url = document.getElementById('image_url').value;
+  
     title = document.getElementById('title').value;
     text = document.getElementById('text').value;
     page_text = document.getElementById('page_text').value;
 
+    const fileInput = document.getElementById('image_url');
+    
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+        // Get the first selected file
+        const file = fileInput.files[0];
+
+        // Read the file as a data URL
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            // e.target.result contains the base64-encoded data URL
+            const base64Image = e.target.result;
+
+            console.log(base64Image);
+
+            fetch('http://18.138.58.216:8080/icons/programs/content', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                },
+                body: JSON.stringify(
+                    {
+                        'image_url': base64Image,
+                        "title": title,
+                        "description": text,
+                        "page_content": page_text,
+                        "program_id": sessionStorage.getItem('program_id')
+
+                    }
+                )
+            })
+               .then(response => response.json())
+               .then(response => {
+                    if (response.message == 'OK') {
+                        alert('Successfully added a new activity')
+                        location.reload();
+                    }
+               })
 
 
-    await fetch('http://18.138.58.216:8080/icons/programs/content', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
-        },
-        body: JSON.stringify(
-            {
-                "image_url": image_url,
-                "title": title,
-                "description": text,
-                "page_content": page_text,
-                "program_id": sessionStorage.getItem('program_id')
-            }
-        )
-    })
-       .then(response => response.json())
-       .then(response => {
-            if (response.message == 'OK') {
-                alert('Successfully added a new program content')
-                location.reload();
-            }
-       })
+
+        };
+
+        reader.readAsDataURL(file);
+
+
+    }
+}
+
+
+// Function to preview the selected image
+function previewImage() {
+    const fileInput = document.getElementById('image_url');
+    const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+
+    // Remove any existing preview
+    imagePreviewContainer.innerHTML = '';
+
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+
+        // Read the file as a data URL
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const image = document.createElement('img');
+            image.src = e.target.result;
+            image.alt = 'Image Preview';
+            image.style.maxWidth = '100%';
+            image.style.maxHeight = '100%'; // Update to 100% for full-screen view
+
+            // Add a click event listener to toggle full-screen mode
+            image.addEventListener('click', toggleFullScreen);
+
+            // Append the image to the preview container
+            imagePreviewContainer.appendChild(image);
+
+            // Show the remove button
+            document.getElementById('removeButton').style.display = 'block';
+        };
+
+        // Read the file as a data URL
+        reader.readAsDataURL(file);
+    }
+}
+
+// Function to show the remove button
+function showRemoveButton() {
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.className = 'btn btn-danger mt-2';
+    removeButton.onclick = removeImage;
+
+    // Append the remove button to the imageInputContainer
+    document.getElementById('imageInputContainer').appendChild(removeButton);
+}
+
+// Function to remove the image and reset the input field
+function removeImage() {
+    const fileInput = document.getElementById('image_url');
+    const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+
+    // Remove the image preview
+    imagePreviewContainer.innerHTML = '';
+
+    // Reset the file input
+    fileInput.value = '';
+
+    // Hide the remove button
+    document.getElementById('removeButton').style.display = 'none';
+}
+
+// Function to toggle full-screen mode when the image is clicked
+function toggleFullScreen() {
+    const image = document.querySelector('#imagePreviewContainer img');
+
+    if (image.requestFullscreen) {
+        image.requestFullscreen();
+    } else if (image.mozRequestFullScreen) { // Firefox
+        image.mozRequestFullScreen();
+    } else if (image.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        image.webkitRequestFullscreen();
+    } else if (image.msRequestFullscreen) { // IE/Edge
+        image.msRequestFullscreen();
+    }
 }

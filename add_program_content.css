@@ -1,0 +1,9 @@
+#imagePreviewContainer {
+    border: 1px solid #000; /* Black border */
+    padding: 200px; /* Padding around the image preview */
+    max-width: 1000%; /* Maximum width */
+    max-height: 3000px; /* Maximum height */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}

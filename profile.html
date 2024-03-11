@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>ICONS South Luzon</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+    <video id="background-video" autoplay loop muted>
+        <source src="images/bg.mp4" type="video/mp4">
+    </video>
+
+  <div class="container">
+    <div class="cover">
+      <div class="front">
+        <img src="images/logo2.jpg">
+      </div>
+    </div>
+
+    
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Profile</div>
+            <div class="description">Tell us about yourself</div>
+          <form onsubmit="profile();return false">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Name" id="name" required>
+              </div>
+
+              <div class="input-box">
+                <i class="fas fa-image image-icon"></i>
+                <input type="file" id="pic" accepts="jpg,png" required>
+              </div>
+
+              <div class="input-box">
+                <i class="fas fa-city"></i>
+                <select style="margin-left:30px;" id="locations">
+                  <option value="albay">Albay</option>
+                  <option value="batangas">Batangas</option>
+                  <option value="cavite">Cavite</option>
+                  <option value="camarines-norte">Camarines Norte</option>
+                  <option value="camarines-sur">Camarines Sur</option>
+                  <option value="catanduanes">Catanduanes</option>
+                  <option value="laguna">Laguna</option>
+                  <option value="marinduque">Marinduque</option>
+                  <option value="masbate">Masbate</option>
+                  <option value="mindoro-occidental">Mindoro Occidental</option>
+                  <option value="mindoro-oriental">Mindoro Oriental</option>
+                  <option value="quezon">Quezon</option>
+                  <option value="romblon">Romblon</option>
+                  <option value="sorsogon">Sorsogon</option>
+                  <option value="rizal">Rizal</option>
+                  <!-- Add more options as needed -->
+                </select>
+    
+              </div>
+
+      
+              <div class="button input-box">
+                <input type="submit" value="Submit"><br>
+              </div>
+  
+              </div>
+              <a href="./index.html">Go Back to ICONS Website</a>
+            </div>
+        </form>
+      </div>
+    </div> 
+  </div>
+
+  <script src="icons.js" async defer></script>
+</div>
+</body>
+</html>

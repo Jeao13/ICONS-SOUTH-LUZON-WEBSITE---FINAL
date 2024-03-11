@@ -19,7 +19,7 @@
   <div class="container">
     <div class="cover">
       <div class="front">
-        <img src="images/logo.png">
+        <img src="images/logo2.jpg">
       </div>
     </div>
 
@@ -27,23 +27,48 @@
     <div class="forms">
         <div class="form-content">
           <div class="login-form">
-            <div class="title">LOGIN</div>
-            <div class="description">Sign in to your Administrator Account</div>
-          <form onsubmit="login();return false">
+            <div class="title">REGISTER</div>
+            <div class="description">Register to your User Account</div>
+          <form  id="createAcc">
             <div class="input-boxes">
-              <div class="input-box">
+              <div class="input-box" style="margin-bottom: 20px;">
                 <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email Address" id="email" required>
+              </div>
+
+              <div class="input-box" style="margin-bottom: 20px;">
+                <i class="fas fa-user"></i>
                 <input type="text" placeholder="Username" id="username" required>
               </div>
+
               <div class="input-box">
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Password" id="password" required>
-                <i class="far fa-eye" id="togglePassword" style="margin-left: 340px; cursor:pointer;"></i>
+               
+                
               </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Confirm Password" id="password1" required>
+               
+                
+              </div>
+              <div class="input-box" style="margin-bottom: 20px;">
+             
+                          <label for="dropdown" style="padding-right:20px;">Role:</label>
+          <select id="role" required>
+            <option value="" disabled selected>Select a Role</option>
+            <option value="2">Startup</option>
+            <option value="3">Partners</option>
+          </select>
+                        
+              </div>
+
+             
               <div class="button input-box">
                 <input type="submit" value="Submit"><br>
               </div>
-  
+
               </div>
               <a href="./index.html">Go Back to ICONS Website</a>
             </div>
@@ -51,17 +76,6 @@
       </div>
     </div> 
   </div>
-
-  <script>
-    const togglePassword = document.querySelector('#togglePassword');
-    const password = document.querySelector('#password');
-
-    togglePassword.addEventListener('click', function(e) {
-      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-      password.setAttribute('type',type);
-      this.classList.toggle('fa-eye-slash');
-    });
-  </script>
 
   <script src="icons.js" async defer></script>
 </div>

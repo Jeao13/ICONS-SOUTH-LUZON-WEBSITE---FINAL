@@ -1,181 +1,548 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>ICONS SL | Messages</title>
-        <link rel="icon" href="images/logo.png">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-        <style>
-            *{
-                margin: 0;
-                padding: 0;
-                font-family: "Poppins" , sans-serif;
-            } 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ICONS SL | Messages</title>
+    <link rel="icon" href="images/logo2.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.css">
 
-            ul.nav a:hover { 
-                color: #022E7D !important; 
-            }
+    <!------ Include the above in your HEAD tag ---------->
 
-            .egf {
-                text-align: center;
-                padding-bottom: 4px;
-                font-size: 54px;
-            }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
 
-            .bg-plain {
-                background-image: url(./images/bg.mp4);
-                background-attachment: fixed;
-            }
-            
-            a {
-                text-decoration: none;
-                color:black;
-            }
 
-            .btn-success {
-                background-color: #022E7D;
-                border-color: #022E7D;
-                color: white;
-            }
-            .btn-success:hover{
-                background-color: #022E7D;
-                color: white;
-            }
+        .heade {
+            text-align: center;
+            padding-bottom: 4px;
+            font-size: 30px;
+        }
 
-            .btn-primary {
-                background-color: #022E7D;
-                border-color: #022E7D;
-            }
 
-            #mybtn {
-                position:fixed;
-                right: 10px;
-                bottom: 10px;
-                width: 50px;
-                height: 50px;
-                background-color: #022E75;
-                color: white;
-                cursor: pointer;
-                border-radius: 50px;
-                border: none;
-                outline: none;
-            }
+        .nav-item i {
+            font-size: 24px;
+            /* Adjust the size as needed */
+        }
 
-            #mybtn:hover {
-                background-color: #022E75;
-            }
+        .icon-border {
+            border: 1px solid black;
+            padding: 5px 10px;
+            border-radius: 20%;
 
-            .edit_button {
-                border: none;
-                border-radius: 5px;
-                color: white;
-                background-color: #0d6efd;
-                padding: 5px 10px;
-            }
+        }
 
-            .edit_button:hover {
-                background-color: #0b5ed7;
-            }
 
-            .reply_button {
-                border: none;
-                border-radius: 5px;
-                color: white;
-                background-color: #022E75;
-                padding: 5px 10px;
-            }
+        .main-section small {
+            font-size: 12px;
+            padding-top: 10px;
+        }
 
-            .reply_button:hover {
-                background-color: #0b5ed7;
-            }
+        .main-section h3,
+        .main-section h5 {
+            margin-top: 5px;
+        }
 
-            .delete_button {
-                border: none;
-                border-radius: 3px;
-                color: white;
-                background-color: #dc3545;
-                padding: 5px 10px;
-            }
+        .main-section {
+            margin-top: 40px;
+
+            width: 1500px;
+
+            background-color: #ffffffce;
+            margin: auto;
+            box-shadow: 2px 2px 10px #a1a1a1;
 
 
 
-            .delete_button:hover {
-                background-color: #bb2d3b;
-            }
+        }
 
-            .read_button {
-                border: none;
-                border-radius: 3px;
-                color: white;
-                background-color: #047e14;
-                padding: 5px 10px;
-            }
+        .head-section {
+            border-bottom: 1px solid #E6E6E6;
+            clear: both;
+            overflow: hidden;
+            width: 100%;
+
+        }
+
+        .headLeft-section {
+            width: calc(30% - 1px);
+            float: left;
+
+        }
+
+        .headLeft-sub {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .headLeft-sub input {
+            width: 60%;
+            border-radius: 0px;
+            border: 1px solid #E6E6E6;
+            padding: 7px;
+        }
+
+        .headLeft-sub button {
+            background: #0B3276;
+            color: #fff;
+            border: 1px solid #E6E6E6;
+            padding: 7px 15px;
+        }
+
+        .headRight-section {
+            width: 70%;
+            float: left;
+        }
+
+        .headRight-sub {
+            padding: 10px 15px 0px 15px;
+        }
+
+        .body-section {
+            clear: both;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .left-section {
+            width: calc(30% - 1px);
+            float: left;
+            height: 500px;
+            border-right: 1px solid #E6E6E6;
+            background-color: #FFF;
+            z-index: 2;
+            position: relative;
+        }
+
+        .left-section ul {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        .left-section ul li {
+            padding: 15px 0px;
+            cursor: pointer;
+        }
+
+        .left-section ul li.active {
+            background: #0B3276;
+            color: #fff;
+            position: relative;
+        }
+
+        .mCustomScrollBox,
+        .mCSB_container {
+            overflow: unset !important;
+        }
+
+        .left-section ul li.active .desc .time {
+            color: #fff;
+        }
+
+        .left-section ul li.active:before {
+            position: absolute;
+            content: '';
+            right: -10px;
+            border: 5px solid 0B3276;
+            top: 0px;
+            bottom: 0px;
+            border-radius: 0px 3px 3px 0px;
+        }
+
+        .left-section ul li.active:after {
+            position: absolute;
+            content: "";
+            bottom: 0px;
+            right: 0px;
+            left: auto;
+            width: 100%;
+            top: 0px;
+            -webkit-box-shadow: -8px 4px 10px #a1a1a1;
+            -moz-box-shadow: -8px 4px 10px #a1a1a1;
+            box-shadow: -8px 4px 10px #a1a1a1;
+        }
+
+        .left-section .chatList {
+            overflow: hidden;
+        }
+
+        .left-section .chatList .img {
+            width: 60px;
+            float: left;
+            text-align: center;
+            position: relative;
+        }
+
+        .left-section .chatList .img img {
+            width: 30px;
+            border-radius: 50%;
+             border: 1px solid #000000;
+        }
+
+        .left-section .chatList .img i {
+            position: absolute;
+            font-size: 10px;
+            color: #02aa1c;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            left: 10px;
+        }
+
+        .left-section .chatList .desc {
+            width: calc(100% - 60px);
+            float: left;
+            position: relative;
+        }
+
+        .left-section .chatList .desc h5 {
+            margin-top: 6px;
+            line-height: 5px;
+        }
+
+        .left-section .chatList .desc .time {
+            position: absolute;
+            right: 15px;
+            color: #c1c1c1;
+        }
+
+        .right-section {
+            width: 70%;
+            float: left;
+            height: 500px;
+            background-color: #f6f6f68f;
+            position: relative;
+        }
+
+        .message {
+            height: calc(100% - 68px);
+            font-family: sans-serif;
+        }
+
+        .message ul {
+            padding: 0px;
+            list-style: none;
+            margin: 0px auto;
+            width: 90%;
+            overflow: hidden;
+        }
+
+        .message ul li {
+            position: relative;
+            width: 80%;
+            padding: 15px 0px;
+            clear: both;
+        }
+
+        .message ul li.msg-left {
+            float: left;
+        }
+
+        .message ul li.msg-left img {
+            position: absolute;
+            width: 40px;
+            bottom: 30px;
+        }
+
+        .message ul li.msg-left .msg-desc {
+            margin-left: 70px;
+            font-size: 15px;
+            background: #E8E8E8;
+            padding: 5px 10px;
+            border-radius: 5px 5px 5px 0px;
+            position: relative;
+        }
+
+        .message ul li.msg-left .msg-desc:before {
+            position: absolute;
+            content: '';
+            border: 10px solid transparent;
+            border-bottom-color: #E8E8E8;
+            bottom: 0px;
+            left: -10px;
+        }
+
+        .message ul li.msg-left small {
+            float: right;
+            color: #c1c1c1;
+        }
+
+        .message ul li.msg-right {
+            float: right;
+        }
+
+        .message ul li.msg-right img {
+            position: absolute;
+            width: 40px;
+            right: 0px;
+            bottom: 30px;
+        }
+
+        .message ul li.msg-right .msg-desc {
+            margin-right: 70px;
+            font-size: 15px;
+            background: #0B3276;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px 5px 5px 0px;
+            position: relative;
+        }
+
+        .message ul li.msg-right .msg-desc:before {
+            position: absolute;
+            content: '';
+            border: 10px solid transparent;
+            border-bottom-color: #0B3276;
+            bottom: 0px;
+            right: -10px;
+        }
+
+        .message ul li.msg-right small {
+            float: right;
+            color: #c1c1c1;
+            margin-right: 70px;
+        }
+
+        .message ul li.msg-day {
+            border-top: 1px solid #EBEBEB;
+            width: 100%;
+            padding: 0px;
+            margin: 15px 0px;
+        }
+
+        .message ul li.msg-day small {
+            position: absolute;
+            top: -10px;
+            background: #F6F6F6;
+            color: #c1c1c1;
+            padding: 3px 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .right-section-bottom {
+            background: #fff;
+            width: 100%;
+            padding: 15px;
+            position: absolute;
+            bottom: 0px;
+            border-top: 1px solid #E6E6E6;
+            text-align: center;
+        }
+
+        .right-section-bottom input {
+            border: 0px;
+            padding: 8px 5px;
+            width: calc(100% - 150px);
+        }
+
+        .right-section-bottom .btn-send {
+            border: 0px;
+            padding: 8px 10px;
+            float: right;
+            margin-right: 30px;
+            color: #0B3276;
+            font-size: 18px;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .upload-btn {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            float: left;
+        }
+
+        .upload-btn .btn {
+            border: 0px;
+            padding: 8px 10px;
+            color: #0B3276;
+            font-size: 18px;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .upload-btn input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        ul.nav a:hover {
+            color: #022E7D !important;
+        }
+
+        .egf {
+            text-align: center;
+            padding-bottom: 4px;
+            font-size: 54px;
+        }
+
+        .bg-plain {
+            background-image: url(./images/bg.mp4);
+            background-attachment: fixed;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .btn-success {
+            background-color: #022E7D;
+            border-color: #022E7D;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #022E7D;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #022E7D;
+            border-color: #022E7D;
+        }
+
+        #mybtn {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: #022E75;
+            color: white;
+            cursor: pointer;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+        }
+
+        #mybtn:hover {
+            background-color: #022E75;
+        }
+
+        .edit_button {
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #0d6efd;
+            padding: 5px 10px;
+        }
+
+        .edit_button:hover {
+            background-color: #0b5ed7;
+        }
+
+        .reply_button {
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #022E75;
+            padding: 5px 10px;
+        }
+
+        .reply_button:hover {
+            background-color: #0b5ed7;
+        }
+
+        .delete_button {
+            border: none;
+            border-radius: 3px;
+            color: white;
+            background-color: #dc3545;
+            padding: 5px 10px;
+        }
 
 
 
-            .read_button:hover {
-                background-color: #106405;
-            }
+        .delete_button:hover {
+            background-color: #bb2d3b;
+        }
 
-            .view_button {
-                border: none;
-                border-radius: 3px;
-                color: white;
-                background-color: #979797;
-                padding: 5px 10px;
-            }
-
-
-
-            .view_button:hover {
-                background-color: #474747;
-            }
+        .read_button {
+            border: none;
+            border-radius: 3px;
+            color: white;
+            background-color: #047e14;
+            padding: 5px 10px;
+        }
 
 
-            #background-video {
-                width: 100vw;
-                height: 100vh;
-                object-fit: cover;
-                position: fixed;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                z-index: -1;
-            }
-        </style>
 
-    </head>
+        .read_button:hover {
+            background-color: #106405;
+        }
 
-    <body class="bg-plain" onload="toggleUnread()" style="text-align: left">
+        .view_button {
+            border: none;
+            border-radius: 3px;
+            color: white;
+            background-color: #979797;
+            padding: 5px 10px;
+        }
 
-        <!-- This is the start of the sidebar section -->
-        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+
+
+        .view_button:hover {
+            background-color: #474747;
+        }
+
+
+        #background-video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    </style>
+
+</head>
+
+<body class="bg-plain" onload="messageStartup()" style="text-align: left">
+    <video id="background-video" autoplay loop muted>
+        <source src="images/bg.mp4" type="video/mp4" />
+    </video>
+
+    <!-- This is the start of the sidebar section -->
+
+
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title text-center w-100" id="offcanvasScrollingLabel">
+
+
                 <a class="navbar-brand me-2" href="https://mdbgo.com/">
-                    <img
-                    src="images/logo.png"
-                    height="80"
-                    alt="MDB Logo"
-                    loading="lazy"
-                    style="margin-top: -1px;"
-                    />
+                    <img src="images/logo2.jpg" height="80" alt="MDB Logo" loading="lazy" style="margin-top: -1px;" />
                 </a>
-            
+
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -188,177 +555,159 @@
                 <li class="list-group-item fs-4 text-center"><a href="./add_program.html">Add Programs</a></li>
                 <li class="list-group-item fs-4 text-center"><a href="./manage_programs.html">Manage Programs</a></li>
                 <li class="list-group-item fs-4 text-center"><a href="./index.html">ICONS Website</a></li>
-              </ul>
+            </ul>
         </div>
-        </div>
-        <!-- This is the end of the sidebar section -->
+    </div>
+    <!-- This is the end of the sidebar section -->
 
-        <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: none;">
-                    <div class="container-fluid mx-5">
-                    <a class="navbar-brand me-2" href="https://mdbgo.com/">
-                        <img
-                        src="images/logo.png"
-                        height="80"
-                        alt="MDB Logo"
-                        loading="lazy"
-                        style="margin-top: -1px;"
-                        />
-                    </a>                
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-mdb-toggle="collapse"
-                        data-mdb-target="#navbarButtonsExample"
-                        aria-controls="navbarButtonsExample"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <i class="bi bi-list"></i>
-                    </button>
-                
-                    <div class="collapse navbar-collapse" id="navbarButtonsExample">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: none;">
+            <div class="container-fluid mx-5">
+                <a class="navbar-brand me-2" href="https://mdbgo.com/">
+                    <img src="images/logo2.jpg" height="80" alt="MDB Logo" loading="lazy" style="margin-top: -1px;" />
+                </a>
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href=""></a>
                         </li>
+                    </ul>
+
+                    <div>
+                        <ul class="nav justify-content-center">
+                            <!-- Home button -->
+                            <li class="nav-item">
+                                <a id="nav-item" class="nav-link text-black fs-4 font-weight-bold pt-4" href="./home.html" title="Home">
+                                    <i class="bi bi-house icon-border"></i>
+                                </a>
+                            </li>
+
+                            <!-- Messages button -->
+                            <li class="nav-item">
+                                <a id="nav-item" class="nav-link text-black fs-4 pt-4" href="./emails.html" title="Emails">
+                                    <i class="bi bi-envelope icon-border"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a id="nav-item" class="nav-link text-black fs-4 pt-4" href="./messages.html" title="Messages">
+                                    <i class="bi bi-chat icon-border"></i>
+                                </a>
+                            </li>
+
+                            <!-- Logout button -->
+                            <li class="nav-item">
+                                <a id="nav-item" class="nav-link text-black fs-4 pt-4" href="./login.html" title="Logout">
+                                    <i class="bi bi-box-arrow-left icon-border"></i>
+                                </a>
+                            </li>
+
+                            <!-- Sidebar toggle button -->
+                            <li class="nav-item">
+                                <a id="nav-item" class="nav-link text-black fs-4 pt-4" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" title="Toggle Sidebar">
+                                    <i class="bi bi-list icon-border"></i>
+                                </a>
+                            </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="mt-2">
+        <div>
+            <h1 class="heade"><b>Messages</b></h1>
 
-                        <div>
-                            <ul class="nav justify-content-center">
-                                <!-- Home button -->
-                                <li class="nav-item">
-                                    <a id="nav-item" class="nav-link text-black fs-4 font-weight-bold pt-4" href="./home.html"><i class="bi bi-house-door-fill"></i></a>
-                                </li>
-                                
-                                <!-- Messages button -->
-                                <li class="nav-item">
-                                    <a id="nav-item" class="nav-link text-black fs-4 pt-4" href="./messages.html">
-                                        <i class="bi bi-envelope"></i>
-                                    </a>
-                                </li>
+        </div>
+    </div>
+    <div class="main-section">
 
-                                <!-- Logout button -->
-                                <li class="nav-item">
-                                    <a id="nav-item" class="nav-link text-black fs-4 pt-4" href="./login.html"><i class="bi bi-box-arrow-left"></i></a>
-                                  </li>
-                                
-                                <!-- Sidebar toggle button -->
-                                <li class="nav-item">
-                                    <a 
-                                        id="nav-item" 
-                                        class="nav-link text-black fs-4 pt-4"
-                                        data-bs-toggle="offcanvas" 
-                                        data-bs-target="#offcanvasScrolling" 
-                                        aria-controls="offcanvasScrolling"
-                                    >                  
 
-                                            <i class="bi bi-list"></i>
-        
-                                    </a>
-                                </li>
-                            </ul>
+        <div class="head-section">
+            <div class="headLeft-section">
+                <div class="headLeft-sub">
+                    <input type="text" name="search" placeholder="Search...">
+                    <button> <i class="fa fa-search"></i> </button>
+                </div>
+            </div>
+            <div class="headRight-section">
+                <div class="headRight-sub">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="body-section">
+            <div class="left-section mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                    <li>
+                        <div class="chatList">
+                           
                         </div>
-                    </div>
-                    </div>
-                </nav>
-        </div>
 
-        <div class="mt-5">
-            <div>
-                <h1 class="egf"><b>Messages</b></h1>
+                    </li>
 
+                </ul>
+                </div>
+
+
+            <div class="right-section">
+
+
+                <div class="message mCustomScrollbar" data-mcs-theme="minimal-dark">
+
+                <div>
+                    <ul id="msgs">
+
+
+                    </ul>
+                    </div>
+                </div>
+                <div class="right-section-bottom">
+
+                    <form id="messageForm">
+ 
+                    </form>
+                    
+                </div>
             </div>
         </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- custom scrollbar plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".mCustomScrollbar").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const messageForm = document.getElementById('messageForm');
+
+    messageForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
         
-        <video id ="background-video"autoplay loop muted>
-            <source src="images/bg.mp4" type="video/mp4"/>
-        </video>
-                   
-        <div class="container" style="display: flex;justify-content: center;">
-            <div class="mx-auto" style=" display: flex; justify-content: center;  gap: 30px;">
-                <button class="read_button" id="btn_prev" onclick="prevPage()">Previous</button>
-                <p><span id="page"></span>/<span id="page_total"></span></p>
-                <button class="read_button" id="btn_next" onclick="nextPage()">Next</button>
-            </div> 
-        </div>
-        <div class="container">
-           <div>
-            <button class="delete_button" id="toggle_button" onclick="toggleUnread()">SHOW UNREAD MESSAGES</button>
-           </div>
-        </div>
-    
-        <div class="container" id="messages">
-
-
-        </div>
-
-
-
+        const messageInput = document.getElementById('messageInput');
+        const message = messageInput.value.trim(); 
+        console.log(message);
+        if (message !== '') {
+            appendMessage(message); // Call the appendMessage function with the message input
+            messageInput.value = ''; // Clear the message input after sending
+        }
+    });
+});
        
-        </div>
+    </script>
+
+    <script src="icons.js" async defer></script>
 
 
-        <!-- The Modal -->
-        <div class="modal" id="messageModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-        
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h3 class="modal-title">View Message</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-        
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"><b>Author:</b></label>
-                   <p id="message_author"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"><b>Subject:</b></label>
-                   <p id="message_subject"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"><b>Message:</b></label>
-                   <p id="message_content" style="text-align: justify;"></p>
-                </div>
-            </div>
-        
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="delete_button" data-bs-dismiss="modal">Close</button>
-            </div>
-        
-            </div>
-        </div>
-        </div>
+</body>
 
-        
-          <button onclick="topFunction()" id="mybtn">
-            <i class="material-icons">arrow_upward</i>
-          </button> 
-        <script>
-            let mybutton = document.getElementById("mybtn");
-            window.onscroll = function() {scrollFunction()};
-
-            function scrollFunction(){
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    mybutton.style.display="block";
-                } else {
-                    mybutton.style.display="none";
-                }
-            }
-            function topFunction(){
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop=0;
-            }
-        </script>
-
-        <!-- The end of the Arrow Upward Button  -->
-
-        <script src="icons.js" async defer></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
-    </body>
 </html>

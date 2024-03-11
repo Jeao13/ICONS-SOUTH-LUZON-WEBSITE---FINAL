@@ -8,7 +8,7 @@
         <link rel="icon" href="images/logo.png">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="add_program_content.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         
@@ -199,9 +199,15 @@
                     </div>
     
                     <div class="form-group row mt-4">
-                        <label for="image_url" class="col-sm-4 col-form-label"><h2>Image Link</h2></label>
+                        <label for="image_url" class="col-sm-4 col-form-label"><h2>Attach Image</h2></label>
                         <div class="col-sm-8">
-                            <textarea class="form-control" rows="2" id="image_url" placeholder="Add link"></textarea>
+                            <!-- Input container with an ID for easy access in JavaScript -->
+                            <div id="imageInputContainer">
+                                <input type="file" id="image_url" accept=".png, .jpg, .jpeg" onchange="previewImage()">
+                            </div>
+                            <!-- Image preview container -->
+                            <div id="imagePreviewContainer" class="mt-2"></div>
+                            <button id="removeButton" class="btn btn-danger mt-2" style="display: none;" onclick="removeImage()">Remove</button>
                         </div>
                     </div>
 
